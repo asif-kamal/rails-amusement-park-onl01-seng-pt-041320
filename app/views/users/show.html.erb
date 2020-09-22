@@ -4,4 +4,4 @@
 <%= @user.height %>
 <%= @user.tickets %>
 
-<%= link_to "Log out", session_path(destroy) %>
+<%= link_to "Log out", session_path, method: :delete %>

@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  
+
   def create
     user = User.create(user_params)
     if user
@@ -21,6 +23,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :height, :happiness, :nausea, :tickets, :password, :password_confirmation, :admin)
+    params.require(:user).permit(:name, :height, :happiness, :nausea, :tickets, :password, :admin)
   end
 end
