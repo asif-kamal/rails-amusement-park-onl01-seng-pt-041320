@@ -1,5 +1,8 @@
 #require 'pry'
 class UsersController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, only: [:new, :create]
+  
   
   def new
     @user = User.new
@@ -18,11 +21,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(:id => params[:id])
+  
+      @user = User.find_by(:id => params[:id])
+  
+    
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :height, :happiness, :nausea, :tickets, :password, :admin)
+  end
+ 
+  def require_login
+    unless current_user
+      redirect_to '/'
+    end
   end
 end

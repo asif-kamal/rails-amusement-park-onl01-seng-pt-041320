@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     if current_user
       session.delete :user_id
-      redirect_to root_url
+      redirect_to '/'
     end
   end
 end

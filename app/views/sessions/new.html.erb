@@ -6,7 +6,7 @@
   <%= form_tag '/signin', :method => :post do %>
  
     <%= label_tag :user_name %>
-    <%= collection_select(:user, :name, User.all, :id, :name) %>
+    <%= collection_select(:user, :name, User.all, :name, :name) %>
 
     <%= label_tag :user_password %>
     <%= password_field_tag :user_password %>

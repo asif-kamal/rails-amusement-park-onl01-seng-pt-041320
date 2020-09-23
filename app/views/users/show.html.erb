@@ -3,5 +3,9 @@
 <%= @user.mood %> 
 <%= @user.height %>
 <%= @user.tickets %>
+ADMIN
+<%= @user.admin %>
 
-<%= link_to "Log out", session_path, method: :delete %>
+<%= link_to "Log Out", session_path, method: :delete %>
+<%= link_to "See attractions", attractions_path %>
+
